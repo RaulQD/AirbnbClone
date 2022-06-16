@@ -1,0 +1,47 @@
+@use 'base/variables'as *;
+@use 'base/mixins'as m;
+
+.experience {
+    margin-bottom: 4rem;
+
+    &__destp {
+        font-size: 1.8rem;
+        margin-bottom: 5rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 30rem);
+        column-gap: 4rem;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+            overflow-x: unset;
+            overflow-y: unset;
+        }
+
+        @include m.desktop {
+            @include m.grid(3, 2rem);
+        }
+    }
+
+    &__content {
+        scroll-snap-align: center;
+    }
+
+    &__img {
+        border-radius: 1rem;
+    }
+
+    &__subtitle {
+        color: $blackColor;
+        font-weight: 600;
+    }
+
+    &__info {
+        font-size: 1.7rem;
+    }
+}

@@ -1,0 +1,58 @@
+@use 'base/mixins'as m;
+@use 'base/variables'as *;
+
+
+.nav {
+    margin-top: 0.5rem;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.tablet {
+        height: calc(55px + 1rem);
+    }
+
+    &__toggle {
+        color: $blackColor;
+        font-size: 1.8rem;
+        cursor: pointer;
+        display: inline-flex;
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+
+    &__logo {
+        color: $whiteColor;
+        font-size: 2.7rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+        &--icon {
+            color: $colorMain;
+        }
+    }
+
+    &__button--content {
+        display: none;
+        color: $whiteColor;
+        font-size: 1.6rem;
+        padding: 1rem 1.5rem;
+        border-radius: 2rem;
+
+        @include m.tablet {
+            display: block;
+        }
+
+        &:hover {
+            transition: .3s;
+            color: $blackColor;
+            background-color: $greyColor;
+        }
+    }
+}

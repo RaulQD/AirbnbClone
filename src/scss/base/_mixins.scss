@@ -1,0 +1,47 @@
+@use 'base/variables'as *;
+
+
+@mixin telefono {
+    @media screen and(min-width:$telefono) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and(min-width:$tablet) {
+        @content;
+    }
+}
+
+@mixin tabletMax {
+    @media screen and(max-width:$tabletMax) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and(min-width:$desktop) {
+        @content;
+    }
+}
+
+@mixin grid($columns, $gap) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+@mixin button($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 2rem 4rem;
+    color: $colorTexto;
+    margin-top: 1rem;
+    border-radius: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+
+    @include tablet {
+        display: inline-block;
+    }
+}

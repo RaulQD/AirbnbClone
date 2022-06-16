@@ -1,0 +1,20 @@
+@use 'base/mixins'as m;
+@use 'base/variables'as *;
+
+
+.header {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 65px;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent;
+    border-bottom: 1px solid $greyColor;
+
+    @include m.tablet {
+        border-bottom: none;
+        display: block;
+    }
+}

@@ -1,0 +1,65 @@
+@use 'base/variables'as *;
+@use 'base/mixins'as m;
+
+
+.dest {
+    &__title {
+        font-size: 2.5rem;
+
+        @include m.tablet {
+            font-size: 3.2rem;
+        }
+    }
+
+    &__grid {
+        margin-top: 4rem;
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+            align-items: center;
+        }
+
+        @include m.desktop {
+            @include m.grid(4, 2rem);
+            align-items: center;
+        }
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        column-gap: 2rem;
+    }
+
+    &__img {
+        width: 14rem;
+    }
+
+    &__name {
+        font-size: 2rem;
+        margin: 0;
+
+        @include m.tablet {
+            font-size: 2.2rem;
+        }
+
+        @include m.desktop {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__hours {
+        font-size: 1.6rem;
+        margin: 0;
+        color: $blackColor;
+
+        @include m.tablet {
+            font-size: 1.8rem;
+        }
+
+        @include m.desktop {
+            font-size: 2rem;
+        }
+    }
+}

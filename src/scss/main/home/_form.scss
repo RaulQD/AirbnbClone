@@ -1,0 +1,69 @@
+@use 'base/mixins'as m;
+@use 'base/variables'as *;
+
+.form {
+    margin: 5rem auto 2rem auto;
+    background-color: $whiteColor;
+    border-radius: 5rem;
+    box-shadow: 0px 4px 5px 0px rgba(0 0 0 / .30);
+    padding: 3rem 1rem;
+
+    @include m.desktop {
+        display: flex;
+        justify-content: space-between;
+        max-width: 90rem;
+        padding: 0;
+        margin: 9rem auto 2rem auto;
+    }
+
+    &__campo {
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+
+        &:nth-child(1) {
+            @include m.desktop {
+                padding-left: 4rem;
+            }
+        }
+
+        &:hover {
+            background-color: $greyColor;
+            border-radius: 5rem;
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+    }
+
+    &__input {
+        border: none;
+        width: 100%;
+
+        &::placeholder {
+            font-size: 1.4srem;
+        }
+    }
+
+    &__button {
+        background-image: radial-gradient(circle, rgb(255, 56, 92) 0%, $secondColor 100%);
+        text-transform: uppercase;
+        color: $whiteColor;
+        font-weight: 500;
+        padding: 0 2rem;
+        font-size: 1.5rem;
+        height: 4rem;
+        border: none;
+        border-radius: 5rem;
+        // display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.5rem;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,90 @@
+@use 'base/variables'as *;
+@use 'base/mixins'as m;
+
+.footer {
+    background-color: lighten($greyColor, 7%);
+    border-top: 1px solid lighten($grey, 40%);
+    padding-top: 5rem;
+
+    &__grid {
+
+        @include m.tablet {
+            @include m.grid(2, 4rem);
+            margin-bottom: 3rem;
+        }
+
+        @include m.desktop {
+            @include m.grid(4, 4rem);
+        }
+    }
+
+    &__widget {
+        margin-bottom: 2rem;
+
+        @include m.tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__items {
+        margin-bottom: 1.5rem;
+
+        @include m.tablet {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    &__links {
+        font-size: 1.2rem;
+        color: $grey;
+    }
+
+
+}
+
+.copy {
+    border-top: 1px solid $grey;
+
+    &__flex {
+        margin: 2rem 0;
+
+        @include m.tablet {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            column-gap: 1rem;
+
+        }
+    }
+
+    &__item {
+        margin-bottom: 1rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        font-size: 1.2rem;
+        color: $grey;
+    }
+
+    &__under {
+        display: none;
+
+        @include m.tablet {
+            text-align: left;
+            margin-left: 1rem;
+            display: inline-block;
+        }
+    }
+}

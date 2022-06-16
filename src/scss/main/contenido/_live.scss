@@ -1,0 +1,45 @@
+@use 'base/variables'as *;
+@use 'base/mixins'as m;
+
+.live {
+    padding-bottom: 4rem;
+
+    &__title {
+        margin-bottom: 5rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 30rem);
+        column-gap: 4rem;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+            overflow-y: unset;
+            overflow-x: unset;
+        }
+
+        @include m.desktop {
+            @include m.grid(4, 2rem);
+        }
+    }
+
+    &__content {
+        scroll-snap-align: center;
+    }
+
+    &__image {
+        border-radius: 1rem;
+    }
+
+    &__info {
+        font-size: 1.6rem;
+
+        @include m.tablet {
+            font-size: 1.8rem;
+        }
+    }
+}
